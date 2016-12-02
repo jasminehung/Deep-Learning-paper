@@ -5,18 +5,43 @@
 ##1. Introduction
 神經網路常被拿來處理語音辨識，以往一般結合Hidden Markov Model (HMM)，但由於聲學模型需考慮到語音幀間的長時相關性，近年用Recurrent Neural Network(RNN)或HMM-RNN替代 (因RNN有記憶能力)。此篇旨在探討將RNN加深後成果是否會變好， 此篇也是第一次將deep LSTM的概念應用在語音辨識上，且有顯著效果。
 ```
-[HMM:隱藏馬可夫模型] (http://www.csie.ntnu.edu.tw/~u91029/HiddenMarkovModel.html#2)
+HMM:隱藏馬可夫模型 http://www.csie.ntnu.edu.tw/~u91029/HiddenMarkovModel.html#2
 ```
 
 ***
 ##2.
-###RNN
+### RNN
+The output of hidden layer are stored in the memory.
+Memory can be considered as another input.
 ```
-[speech recognition with deep recurrent neural networks-论文笔记第2部分](http://blog.csdn.net/thy_2014/article/details/50497822)
+speech recognition with deep recurrent neural networks-论文笔记第2部分:
+http://blog.csdn.net/thy_2014/article/details/50497822
 ```
+### 長短期記憶人工神經網絡（Long-Short Term Memory, LSTM）
+### Bidirectional RNN
+傳統RNN只能利用上文的內容，對語音辨識來說下文的內容同樣重要。BRNN使用兩個隱藏層。
+
+結合BRNN與LSTM成為雙向LSTM，可取得大範圍且兩個方向的上下文。
+
 ***
 
 ##3. Network Training
+此篇專注於end-to-end training的改善
+
+### CTC 鏈結式時間分類算法
+
+Connectionist Temporal Classification是一種改良RNN的模型，接在RNN網絡最後一層用於序列學習。此篇用CTC在input與output序列間產生機率分布，達到不需將output(label)與input (音訊)對應起來就可以訓練。
+
+CTC將發音單元之間混淆或不確定的區域映射到blank symbol( Φ)，最後把blank和預測出的重複符號消除。
+
+e.g. 預測出 "ΦΦcΦaaaΦΦtt"，就對應序列 "cat"，"ccΦaΦΦtΦ"，也對應序列 "cat"
+                  
+```
+[论文]CTC: http://www.jianshu.com/p/8406618e940f
+AI浪潮下，语音识别建模技术的演进: http://www.leiphone.com/news/201609/MeknwgR9xf0nf8pc.html
+语音识别中的CTC方法的基本原理: https://www.zhihu.com/question/47642307
+```
+
 
 ###RNN Transducer
 將CTC及RNN的預測結合進一個feed-forward network，作者稱之為RNN Transducer。
