@@ -5,12 +5,15 @@
 ##1. Introduction
 神經網路常被拿來處理語音辨識，以往一般結合Hidden Markov Model (HMM)，但由於聲學模型需考慮到語音幀間的長時相關性，近年用Recurrent Neural Network(RNN)或HMM-RNN替代 (因RNN有記憶能力)。此篇旨在探討將RNN加深後成果是否會變好， 此篇也是第一次將deep LSTM的概念應用在語音辨識上，且有顯著效果。
 ```
-HMM:隱藏馬可夫模型 http://www.csie.ntnu.edu.tw/~u91029/HiddenMarkovModel.html#2
+[HMM:隱藏馬可夫模型] (http://www.csie.ntnu.edu.tw/~u91029/HiddenMarkovModel.html#2)
 ```
 
 ***
-
 ##2.
+###RNN
+```
+[speech recognition with deep recurrent neural networks-论文笔记第2部分](http://blog.csdn.net/thy_2014/article/details/50497822)
+```
 ***
 
 ##3. Network Training
@@ -37,8 +40,12 @@ In this work we pretrain the prediction network on the phonetic transcriptions o
 ***
 ##4. Experiment
 使用TIMIT 語料資料庫
-***
+![](https://github.com/jasminehung/Deep-Learning-paper/blob/master/images/timit.PNG)
 
+### Result
+![](https://github.com/jasminehung/Deep-Learning-paper/blob/master/images/result.PNG)
+
+***
 ## Conclusion
 將deep且雙向的LSTM RNN與端對端訓練結合，成為語音辨識最新技術突破。
 ***
