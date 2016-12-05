@@ -9,7 +9,7 @@ HMM:隱藏馬可夫模型 http://www.csie.ntnu.edu.tw/~u91029/HiddenMarkovModel.
 ```
 
 ***
-##2.
+##2.文獻回顧
 ### RNN
 The output of hidden layer are stored in the memory.
 Memory can be considered as another input.
@@ -88,6 +88,7 @@ In this work we pretrain the prediction network on the phonetic transcriptions o
 + 擴展到更多字彙的辨識
 + 將deep LSTM結合frequency domain CNN
 ***
-##參考
+
+## 參考
 + [Summary of the paper Speech recognition with deep recurrent neural networks](http://wikicoursenote.com/wiki/Graves_et_al.,_Speech_recognition_with_deep_recurrent_neural_networks)
-+[]()
+
