@@ -18,6 +18,15 @@ speech recognition with deep recurrent neural networks-论文笔记第2部分:
 http://blog.csdn.net/thy_2014/article/details/50497822
 ```
 ### 長短期記憶人工神經網絡（Long-Short Term Memory, LSTM）
+![](https://github.com/jasminehung/Deep-Learning-paper/blob/master/images/LSTM.PNG)
+
+LSTM是一種特殊的RNN，可記憶長期訊息，解決了傳統RNN梯度消失等問題。
+
+LSTM使用memory cells儲存訊息，cell內部決定要保留那些記憶，並決定要輸出哪些訊息。
+```
+最新语音识别系统和框架深度剖析: http://codecloud.net/17305.html
+LSTM和RNN网络教程:https://www.zhihu.com/question/29411132
+```
 ### Bidirectional RNN
 傳統RNN只能利用上文的內容，對語音辨識來說下文的內容同樣重要。BRNN使用兩個隱藏層。
 
