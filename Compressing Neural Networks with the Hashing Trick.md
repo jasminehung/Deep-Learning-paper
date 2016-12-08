@@ -2,6 +2,10 @@
 [PDF HERE](http://www.jmlr.org/proceedings/papers/v37/chenc15.pdf)
 >Chen, W., Wilson, J. T., Tyree, S., Weinberger, K. Q., & Chen, Y. (2015). Compressing neural networks with the hashing trick. CoRR, abs/1504.04788.
 
+![](https://github.com/jasminehung/Deep-Learning-paper/blob/master/images/hashnet.PNG)
+
+## Result
+![](https://github.com/jasminehung/Deep-Learning-paper/blob/master/images/hashresult.PNG)
 
 ## 參考
 + [Deep Compression and EIE-Song Han](http://web.stanford.edu/class/ee380/Abstracts/160106-slides.pdf)
