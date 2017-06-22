@@ -1,4 +1,4 @@
-#Compressing Neural Networks with the Hashing Trick 
+# Compressing Neural Networks with the Hashing Trick 
 [PDF HERE](http://www.jmlr.org/proceedings/papers/v37/chenc15.pdf)
 
 [Code Download](http://www.cse.wustl.edu/~wenlinchen/project/HashedNets/index.html)
