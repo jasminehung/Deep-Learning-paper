@@ -7,3 +7,5 @@
 [中文Summary重點整理](https://github.com/jasminehung/Deep-Learning-paper/blob/master/Compressing%20Neural%20Networks%20with%20the%20Hashing%20Trick.md)
 
 3. Matching Networks for One Shot Learning 
+[中文Summary重點整理](https://github.com/jasminehung/Deep-Learning-paper/blob/master/Matching%20Networks%20for%20One%20Shot%20Learning.md)
+
