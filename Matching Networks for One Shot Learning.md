@@ -26,6 +26,9 @@ L': 保留出來不被train的subset
 这个数据库中有1623个字符，由50种不同的字母表组成的。由20位人員手写了这些字符。
 
 ### 4.1.2 ImageNet
++ rand setup
++ dogs setup
++ miniImageNet
 
 參考
 + [http://blog.csdn.net/shenxiaolu1984/article/details/53129937](http://blog.csdn.net/shenxiaolu1984/article/details/53129937)
