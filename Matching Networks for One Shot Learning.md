@@ -1,13 +1,37 @@
 # Matching Networks for One Shot Learning (Google DeepMind)
 [PDF HERE](https://arxiv.org/pdf/1606.04080.pdf)
 
+本文通过拓展的外部信息加强记忆神经网络的效果，提出了一种针对one-shot学习的神经网络模型-Matching Net (MN).该模型可将一个小的标注集合以及一个未标注的测试样例映射到它对应的标签，在这个过程中避免了对于新的标签类别进行调整的需求。该方法在ImageNet数据集的one-shot准确率从87.6%提升到了93.2%，在Omniglot数据集上的效果从88.0%提升到了93.8%。
+
 ### 1. 本文創新之處有二： 
 - 模型设计中，借鉴了当下流行的注意力LSTM，考虑了整个参考集合的贡献； 
 - 训练过程中，尽量模拟测试流程，使用小样本构造minibatch。
 Matching Net (MN) 该模型可以将一个小的标注集合以及一个未标注的测试样例映射到它对应的标签，在这个过程中避免了对于新的标签类别进行调整的需求。
 
-### 2. Model
+### 2. Model (本文提出一種非參的方法來解决one-shot學習問題)
+![](http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=http://mmbiz.qpic.cn/mmbiz/G3dAicUK7RSL69ict9U1UsiciaQHSI3hwoZmPVZia8dLgdfPqI8ibCLicR9q8lmP130wC1MvoFDZPEBXYrxkicWicn1pEpA/0?wx_fmt=png)
+
+f:针对支持集合样例的嵌入函数。g:针对testing sample的嵌入函数。用来将图像或者文本表示成向量形式。对于图像相关的任务，一般采用深层卷积神经网络，而对于文本相关的任务，通常直接利用简单的词向量表示。
+
+
+MN的输入包括长度为k的有标注的支持集合S以及一个未标注的testing sample x，输出为该testing sample对应的类别y。
+通过引入attention机制，testing sample的类别输出为支持集合中样例的类别的线性组合：(a为attention kernel)
+
+![](http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=http://mmbiz.qpic.cn/mmbiz/G3dAicUK7RSL69ict9U1UsiciaQHSI3hwoZmkCRG3iaCFpCxaC4Zgjp8WXO1YNBGMXthvsVZcZNTQtCjV5oRdk224hw/0?wx_fmt=png)
+
 ### 2.1.1 注意力模型
+得到支持样例以及测试样例的表示之后，我们可以计算向量之间的余弦距离并通过softmax函数来作为attention kernel的实现，如下所示：
+![](http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=http://mmbiz.qpic.cn/mmbiz/G3dAicUK7RSL69ict9U1UsiciaQHSI3hwoZmc9EnZibrDI10X8CordKiaxzliaiblvK4av6NCT2VgEsFqfxX76wsSUrtAA/0?wx_fmt=png)
+
+### 2.2 Training Strategy
+MN的参数集合θ包括嵌入函数f和g中的参数。
+首先定义T为L在标签集上的分布。根据T抽样出标签集L，例如{cats, dogs}。
+
+随后，根据抽样出来的标签集L抽样产生支持集合S和训练batch B，这些集合都是由已标注的cats或dogs的样例构成。
+
+Matching Net的目标是最大化根据支持集合S预测训练batch B中标签的概率，如下所示：
+
+![](http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=http://mmbiz.qpic.cn/mmbiz/G3dAicUK7RSL69ict9U1UsiciaQHSI3hwoZmyibIcnoTymlCQRkNGkibwAId5tN4ibbGLEicPn74Jt5sX0utxhNALoYxlA/0?wx_fmt=png)
 
 ### 3.1 MANN - Learning to Learn
 Meta-learning 一般指的是一種遷移學習(Transfer Learning），透過已有的知識輔助新知識的學習
