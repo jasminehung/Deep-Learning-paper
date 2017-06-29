@@ -24,6 +24,9 @@ Matching Net (MN) 该模型可以将一个小的标注集合以及一个未标�
 
 
 ### 2. Model (本文提出一種非參的方法來解决one-shot學習問題)
+
+给出的参考集中有k个样本：(xi,yi)i=1:k。k往往很小，类别的数量也不多。 对于测试样本x^，预测其标定y^。
+
 ![](http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=http://mmbiz.qpic.cn/mmbiz/G3dAicUK7RSL69ict9U1UsiciaQHSI3hwoZmPVZia8dLgdfPqI8ibCLicR9q8lmP130wC1MvoFDZPEBXYrxkicWicn1pEpA/0?wx_fmt=png)
 
 f:针对支持集合样例的嵌入函数。g:针对testing sample的嵌入函数。用来将图像或者文本表示成向量形式。对于图像相关的任务，一般采用深层卷积神经网络，而对于文本相关的任务，通常直接利用简单的词向量表示。
@@ -37,6 +40,10 @@ MN的输入包括:有k個examples的有标注的support set(k很小)，以及一
 ### 2.1.1 注意力模型
 得到支持样例以及测试样例的表示之后，我们可以计算向量之间的余弦距离并通过softmax函数来作为attention kernel的实现，如下所示：
 ![](http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=http://mmbiz.qpic.cn/mmbiz/G3dAicUK7RSL69ict9U1UsiciaQHSI3hwoZmc9EnZibrDI10X8CordKiaxzliaiblvK4av6NCT2VgEsFqfxX76wsSUrtAA/0?wx_fmt=png)
+
+C是余弦距离，用于比较测试样本x^和参考样本xi的相似度。
+
+f,g分别是测试样本和参考样本的特征提取函数（论文里称为embedding），使用深度网络实现
 
 ### 2.2 Training Strategy
 MN的参数集合θ包括嵌入函数f和g中的参数。
@@ -70,8 +77,8 @@ L': 保留出來不被train的subset
 + miniImageNet
 
 參考
-+ [http://blog.csdn.net/shenxiaolu1984/article/details/53129937](http://blog.csdn.net/shenxiaolu1984/article/details/53129937)
-+ [http://chuansong.me/n/371517551454?jdfwkey=umt172](http://chuansong.me/n/371517551454?jdfwkey=umt172)
++ [【深度学习】One Shot Learning](http://blog.csdn.net/shenxiaolu1984/article/details/53129937)
++ [论文引介 | Matching Networks for One Shot Learning](http://chuansong.me/n/371517551454?jdfwkey=umt172)
 + [投影片](https://www.slideshare.net/KazukiFujikawa/matching-networks-for-one-shot-learning-71257100)
 + [深度:机器如何模仿人类的学习方式?](http://www.sohu.com/a/113603719_114877)
 + [参数和非参数机器学习算法](http://shujuren.org/article/106.html)
