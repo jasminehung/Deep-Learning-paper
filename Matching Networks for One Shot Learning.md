@@ -3,10 +3,25 @@
 
 本文通过拓展的外部信息加强记忆神经网络的效果，提出了一种针对one-shot学习的神经网络模型-Matching Net (MN).该模型可将一个小的标注集合以及一个未标注的测试样例映射到它对应的标签，在这个过程中避免了对于新的标签类别进行调整的需求。该方法在ImageNet数据集的one-shot准确率从87.6%提升到了93.2%，在Omniglot数据集上的效果从88.0%提升到了93.8%。
 
-### 1. 本文創新之處有二： 
+### 1. 
+
+此篇合併參數與非參數模型的優點
+```
+- 參數模型: 简化目标函数为已知形式的算法就称为参数机器学习算法。
+通过固定大小的参数集(与训练样本数独立)概况数据的学习模型称为参数模型。
+不管你给与一个参数模型多少数据，对于其需要的参数数量都没有影响。
+
+- 非參數模型(non-parametric): 对于目标函数形式不作过多的假设的算法称为非参数机器学习算法。
+通过不做假设，算法可以自由的从训练数据中学习任意形式的函数。
+当你拥有许多数据而先验知识很少时，非参数学习通常很有用，此时你不需要关注于参数的选取。
+如: 决策树(例如CART和C4.5)、SVM、神经网络、Kmeans...
+```
+
+本文創新之處有二： 
 - 模型设计中，借鉴了当下流行的注意力LSTM，考虑了整个参考集合的贡献； 
 - 训练过程中，尽量模拟测试流程，使用小样本构造minibatch。
 Matching Net (MN) 该模型可以将一个小的标注集合以及一个未标注的测试样例映射到它对应的标签，在这个过程中避免了对于新的标签类别进行调整的需求。
+
 
 ### 2. Model (本文提出一種非參的方法來解决one-shot學習問題)
 ![](http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=http://mmbiz.qpic.cn/mmbiz/G3dAicUK7RSL69ict9U1UsiciaQHSI3hwoZmPVZia8dLgdfPqI8ibCLicR9q8lmP130wC1MvoFDZPEBXYrxkicWicn1pEpA/0?wx_fmt=png)
@@ -59,3 +74,5 @@ L': 保留出來不被train的subset
 + [http://chuansong.me/n/371517551454?jdfwkey=umt172](http://chuansong.me/n/371517551454?jdfwkey=umt172)
 + [投影片](https://www.slideshare.net/KazukiFujikawa/matching-networks-for-one-shot-learning-71257100)
 + [深度:机器如何模仿人类的学习方式?](http://www.sohu.com/a/113603719_114877)
++ [参数和非参数机器学习算法](http://shujuren.org/article/106.html)
++ 
