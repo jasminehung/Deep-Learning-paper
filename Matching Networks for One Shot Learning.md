@@ -29,8 +29,8 @@ Matching Net (MN) 该模型可以将一个小的标注集合以及一个未标�
 f:针对支持集合样例的嵌入函数。g:针对testing sample的嵌入函数。用来将图像或者文本表示成向量形式。对于图像相关的任务，一般采用深层卷积神经网络，而对于文本相关的任务，通常直接利用简单的词向量表示。
 
 
-MN的输入包括长度为k的有标注的支持集合S以及一个未标注的testing sample x，输出为该testing sample对应的类别y。
-通过引入attention机制，testing sample的类别输出为支持集合中样例的类别的线性组合：(a为attention kernel)
+MN的输入包括:有k個examples的有标注的support set(k很小)，以及一个未标注的test example x，输出为对应的类别y。
+通过引入attention机制，test example的类别输出为支持集合中样例的类别的线性组合：(a为attention kernel)
 
 ![](http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=http://mmbiz.qpic.cn/mmbiz/G3dAicUK7RSL69ict9U1UsiciaQHSI3hwoZmkCRG3iaCFpCxaC4Zgjp8WXO1YNBGMXthvsVZcZNTQtCjV5oRdk224hw/0?wx_fmt=png)
 
