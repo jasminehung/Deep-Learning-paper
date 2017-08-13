@@ -2,14 +2,14 @@
 [PDF HERE](https://arxiv.org/pdf/1303.5778.pdf)
 >Graves, A., Mohamed, A. R., & Hinton, G. (2013, May). Speech recognition with deep recurrent neural networks. In 2013 IEEE international conference on acoustics, speech and signal processing (pp. 6645-6649). IEEE.
 
-##1. Introduction
+## 1. Introduction
 神經網路常被拿來處理語音辨識，以往一般結合Hidden Markov Model (HMM)，但由於聲學模型需考慮到語音幀間的長時相關性，近年用Recurrent Neural Network(RNN)或HMM-RNN替代 (因RNN有記憶能力)。此篇旨在探討將RNN加深後成果是否會變好， 此篇也是第一次將deep LSTM的概念應用在語音辨識上，且有顯著效果。
 ```
 HMM:隱藏馬可夫模型 http://www.csie.ntnu.edu.tw/~u91029/HiddenMarkovModel.html#2
 ```
 
 ***
-##2.文獻回顧
+## 2.文獻回顧
 ### RNN
 The output of hidden layer are stored in the memory.
 Memory can be considered as another input.
@@ -34,7 +34,7 @@ LSTM和RNN网络教程:https://www.zhihu.com/question/29411132
 
 ***
 
-##3. Network Training
+## 3. Network Training
 此篇專注於end-to-end training的改善
 
 ### CTC 鏈結式時間分類算法
@@ -52,7 +52,7 @@ AI浪潮下，语音识别建模技术的演进: http://www.leiphone.com/news/20
 ```
 
 
-###RNN Transducer
+### RNN Transducer
 將CTC及RNN的預測結合進一個feed-forward network，作者稱之為RNN Transducer。
 
 此篇RNN Transducer用以下兩種方法做訓練:
@@ -62,7 +62,7 @@ AI浪潮下，语音识别建模技术的演进: http://www.leiphone.com/news/20
 ```
 In this work we pretrain the prediction network on the phonetic transcriptions of the audio training data.
 ```
-###正規化
+### 正規化
 
 因RNN易overfit，必須正規化，此篇用:
 
@@ -72,7 +72,7 @@ In this work we pretrain the prediction network on the phonetic transcriptions o
 一個Epoch集為對所有的訓練數據的一輪遍歷
 ```
 ***
-##4. Experiment
+## 4. Experiment
 使用TIMIT 語料資料庫
 ![](https://github.com/jasminehung/Deep-Learning-paper/blob/master/images/timit.PNG)
 
