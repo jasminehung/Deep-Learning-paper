@@ -8,3 +8,6 @@ One-shot recognition task includes data from
 ![](https://github.com/jasminehung/Deep-Learning-paper/blob/master/images/target.PNG)
 
 - 用unlabled images來學習的例子-分辨斑馬與馬: 從斑馬資料集中學習出"條紋"這個重要的特徵，此特徵未來也可運用在分辨老虎與豹等等不同類別。
+
+Hierarchical Dirichlet Process (HDP，階層式狄氏程序)
+
