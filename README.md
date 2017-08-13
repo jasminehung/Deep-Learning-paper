@@ -11,3 +11,6 @@
 
 4. Meta-learning with memory-augmented neural networks (Google DeepMind)
 [中文Summary重點整理]()
+
+4. An unsupervised hierarchical feature learning framework for one-shot image recognition (IEEE,2013)
+[中文Summary重點整理]()
