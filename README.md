@@ -12,5 +12,8 @@
 4. Meta-learning with memory-augmented neural networks (Google DeepMind)
 [中文Summary重點整理]()
 
-4. An unsupervised hierarchical feature learning framework for one-shot image recognition (IEEE,2013)
+5. An unsupervised hierarchical feature learning framework for one-shot image recognition (IEEE,2013) *非深度學習
 [中文Summary重點整理](https://github.com/jasminehung/Deep-Learning-paper/blob/master/an%20unsupervised%20hierarchical%20feature%20learning%20framework%20for%20one-shot%20image%20recognition.md)
+
+6. Human-level concept learning through probabilistic program induction (Science,2015) *非深度學習
+[中文Summary重點整理](https://github.com/jasminehung/Deep-Learning-paper/blob/master/Human-level%20concept%20learning%20through%20probabilistic%20program%20induction.md)
