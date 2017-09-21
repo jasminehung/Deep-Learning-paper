@@ -82,4 +82,4 @@ L': 保留出來不被train的subset
 + [投影片](https://www.slideshare.net/KazukiFujikawa/matching-networks-for-one-shot-learning-71257100)
 + [深度:机器如何模仿人类的学习方式?](http://www.sohu.com/a/113603719_114877)
 + [参数和非参数机器学习算法](http://shujuren.org/article/106.html)
-+ 
++ [論文中文介紹gitbook](https://chao1224.gitbooks.io/running-paper/content/arxiv/arxiv2016/matching_networks_for_one_shot_learning.html)
