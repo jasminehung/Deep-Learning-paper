@@ -10,7 +10,7 @@
 [中文Summary重點整理](https://github.com/jasminehung/Deep-Learning-paper/blob/master/Matching%20Networks%20for%20One%20Shot%20Learning.md)
 
 4. Meta-learning with memory-augmented neural networks (Google DeepMind)
-[中文Summary重點整理]()
+[中文Summary重點整理](https://github.com/jasminehung/Deep-Learning-paper/blob/master/Meta-learning%20with%20memory-augmented%20neural%20networks.md)
 
 5. An unsupervised hierarchical feature learning framework for one-shot image recognition (IEEE,2013) *非深度學習
 [中文Summary重點整理](https://github.com/jasminehung/Deep-Learning-paper/blob/master/An%20unsupervised%20hierarchical%20feature%20learning%20framework%20for%20one-shot%20image%20recognition.md)
