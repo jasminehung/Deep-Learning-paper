@@ -26,4 +26,4 @@ Test on never-seen classes。
 One-shot Learning with Memory-Augmented Neural Networks](https://rylanschaeffer.github.io/content/research/one_shot_learning_with_memory_augmented_nn/main.html)
 + [中文解說影片](https://www.slideshare.net/KatyLee4/meta-learning-with-memory-augmented-neural-network)
 + [韓文投影片](https://www.slideshare.net/ssuser06e0c5/metalearning-with-memory-augmented-neural-networks)
-+ []()
++ [類神經網路-Neural Turing Machine](http://cpmarkchang.logdown.com/posts/279710-neural-network-neural-turing-machine)
